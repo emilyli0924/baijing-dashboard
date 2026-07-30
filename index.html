@@ -56,7 +56,8 @@ function checkPass(){
   if(document.getElementById('passwordInput').value === PASSWORD){
     document.getElementById('loginBox').style.display = 'none';
     document.getElementById('dashboard-content').style.display = 'block';
-    initDashboard();
+    loadData(); renderHeader(); renderAll(); setupTabs(); setupSubTabs();
+    setTimeout(function(){for(var k in CHARTS){if(CHARTS[k])CHARTS[k].resize();}},100);
   } else { document.getElementById('errMsg').style.display = 'block'; }
 }
 </script>
