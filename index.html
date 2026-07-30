@@ -801,8 +801,8 @@ function initDashboard(){
     for(var k in CHARTS){ if(CHARTS[k]) CHARTS[k].resize(); }
   }, 100);
 }
-// 页面加载完成时自动初始化
-window.addEventListener('DOMContentLoaded', function(){ initDashboard(); });
+// 页面加载时不自动初始化（等密码验证后再初始化）
+// window.addEventListener('DOMContentLoaded', function(){ initDashboard(); });
 
 window.addEventListener('resize', function(){
   for(var k in CHARTS){
